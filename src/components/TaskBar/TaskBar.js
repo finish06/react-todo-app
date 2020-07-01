@@ -16,4 +16,4 @@ const appBar = (props) => {
     )
 }
 
-export default appBar;
+export default React.memo(appBar);

@@ -17,4 +17,4 @@ const taskInput = (props) => {
     )
 };
 
-export default taskInput;
+export default React.memo(taskInput);
