@@ -8,6 +8,7 @@ import TaskBar from './components/TaskBar/TaskBar';
 import axios from './axios-orders';
 
 import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper'
 
 class App extends Component {
   constructor(props) {
@@ -86,10 +87,12 @@ class App extends Component {
 
   render() {
     return (
-      <Container maxWidth="false" className="App">
-        <TaskBar username={''}/>
-        <TaskInput defaultDisplay={this.state.tempTask} defaultValue={this.state.defaultValue} typeTask={this.holdTempTaskHandler} submitTask={this.addToListHandler} />
-        <TaskList taskItems={this.state.taskItems} onComplete={this.commpleteTaskHandler} onDelete={this.deleteTaskHandler}/>
+      <Container maxWidth="md" className="App">
+        <Paper elevation={3}>
+          <TaskBar username={''}/>
+          <TaskInput defaultDisplay={this.state.tempTask} defaultValue={this.state.defaultValue} typeTask={this.holdTempTaskHandler} submitTask={this.addToListHandler} />
+          <TaskList taskItems={this.state.taskItems} onComplete={this.commpleteTaskHandler} onDelete={this.deleteTaskHandler}/>
+        </Paper>
       </Container>
     );
   }
